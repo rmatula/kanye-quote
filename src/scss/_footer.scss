@@ -1,0 +1,29 @@
+.footer {
+  @include addFlexbox(row);
+  position: absolute;
+  bottom: 1rem;
+
+  width: 100vw;
+  justify-content: space-between;
+
+  .my-github {
+    .github-icon {
+      margin-left: 1.5rem;
+    }
+  }
+
+  .api-author {
+    margin-right: 2rem;
+
+    .api-author-clickable {
+      @include addFlexbox(row);
+
+      .footer-text {
+        color: #fff;
+      }
+      .twitter-icon {
+        margin-right: 0.3rem;
+      }
+    }
+  }
+}

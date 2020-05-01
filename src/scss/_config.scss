@@ -1,0 +1,32 @@
+$background-color: #272727;
+$primary-text-color: #fff;
+$button-color: #ffbd21;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Fjalla One', sans-serif;
+  text-decoration: none;
+}
+
+@mixin transition-ease {
+  transition: all 0.2s ease-in-out;
+}
+
+@mixin addFlexbox($direction) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}

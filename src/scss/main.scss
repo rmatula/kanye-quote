@@ -1,0 +1,25 @@
+@import 'config';
+@import 'button';
+@import 'quote';
+@import 'footer';
+
+.content {
+  background: $background-color;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+      to right,
+      rgba($background-color, 1),
+      rgba($background-color, 0.9)
+    ),
+    url('../assets/ws_Kanye_West_Cool_1920x1080.jpg');
+  color: $primary-text-color;
+  @include addFlexbox(column);
+
+  .main-container {
+    @include addFlexbox(column);
+    text-align: center;
+    height: 80vh;
+    width: 80%;
+  }
+}

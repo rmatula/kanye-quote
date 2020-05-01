@@ -1,0 +1,18 @@
+.button {
+  margin-top: 4rem;
+  background: $button-color;
+  width: 10rem;
+  height: 3rem;
+  @include addFlexbox(column);
+  border-radius: 1rem;
+
+  .button-text {
+    color: #000000;
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

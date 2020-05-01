@@ -1,0 +1,9 @@
+.quote {
+  font-size: 3rem;
+  @include addFlexbox(column);
+
+  p {
+    text-align: center;
+    width: 100%;
+  }
+}
