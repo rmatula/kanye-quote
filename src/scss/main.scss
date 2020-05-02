@@ -14,12 +14,31 @@
     ),
     url('../assets/ws_Kanye_West_Cool_1920x1080.jpg');
   color: $primary-text-color;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
   @include addFlexbox(column);
 
-  .main-container {
+  .outer-container {
     @include addFlexbox(column);
-    text-align: center;
-    height: 80vh;
-    width: 80%;
+    .main-container {
+      @include addFlexbox(column);
+      text-align: center;
+      height: 30vh;
+      width: 80%;
+
+      @media (max-width: $smaller-screens) {
+        height: 40vh;
+      }
+
+      @media (max-width: $mobiles) {
+        height: 50vh;
+      }
+
+      @media (max-width: $small-mobiles) {
+        height: 60vh;
+      }
+    }
   }
 }

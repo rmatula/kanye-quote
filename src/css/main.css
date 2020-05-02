@@ -23,7 +23,6 @@
 }
 
 .button {
-  margin-top: 4rem;
   background: #ffbd21;
   width: 10rem;
   height: 3rem;
@@ -40,7 +39,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   border-radius: 1rem;
+  opacity: 0.85;
 }
 
 .button .button-text {
@@ -50,7 +52,11 @@
 }
 
 .button:hover {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
+  width: 10.5rem;
+  opacity: 1;
 }
 
 .quote {
@@ -68,6 +74,24 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media (max-width: 1600px) {
+  .quote {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .quote {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .quote {
+    font-size: 1.8rem;
+  }
 }
 
 .quote p {
@@ -136,6 +160,10 @@
   background: -webkit-gradient(linear, left top, right top, from(#272727), to(rgba(39, 39, 39, 0.9))), url("../assets/ws_Kanye_West_Cool_1920x1080.jpg");
   background: linear-gradient(to right, #272727, rgba(39, 39, 39, 0.9)), url("../assets/ws_Kanye_West_Cool_1920x1080.jpg");
   color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -151,7 +179,23 @@
           flex-direction: column;
 }
 
-.content .main-container {
+.content .outer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content .outer-container .main-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -166,7 +210,25 @@
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
-  height: 80vh;
+  height: 30vh;
   width: 80%;
+}
+
+@media (max-width: 1600px) {
+  .content .outer-container .main-container {
+    height: 40vh;
+  }
+}
+
+@media (max-width: 900px) {
+  .content .outer-container .main-container {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .content .outer-container .main-container {
+    height: 60vh;
+  }
 }
 /*# sourceMappingURL=main.css.map */

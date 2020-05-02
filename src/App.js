@@ -22,11 +22,13 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="main-container">
-          <Quote quote={this.state.quote} />
+        <div className="outer-container">
+          <div className="main-container">
+            <Quote quote={this.state.quote} />
+          </div>
           <Button handleSearch={this.handleSearch} />
+          <Footer />
         </div>
-        <Footer />
       </React.Fragment>
     );
   }

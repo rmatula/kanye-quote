@@ -2,6 +2,18 @@
   font-size: 3rem;
   @include addFlexbox(column);
 
+  @media (max-width: $smaller-screens) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: $small-mobiles) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: $super-small-mobiles) {
+    font-size: 1.8rem;
+  }
+
   p {
     text-align: center;
     width: 100%;

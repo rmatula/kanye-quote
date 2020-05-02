@@ -1,10 +1,12 @@
 .button {
-  margin-top: 4rem;
   background: $button-color;
+
   width: 10rem;
   height: 3rem;
   @include addFlexbox(column);
+  @include transition-ease;
   border-radius: 1rem;
+  opacity: 0.85;
 
   .button-text {
     color: #000000;
@@ -13,6 +15,9 @@
   }
 
   &:hover {
+    @include transition-ease;
     cursor: pointer;
+    width: 10.5rem;
+    opacity: 1;
   }
 }
