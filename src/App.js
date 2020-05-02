@@ -1,5 +1,4 @@
 import React from 'react';
-import './css/main.css';
 import { Quote, Button, Footer } from './components';
 import { fetchData } from './api';
 

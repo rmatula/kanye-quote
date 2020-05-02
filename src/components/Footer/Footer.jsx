@@ -6,9 +6,8 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="my-github">
-        <a href="https://github.com/rmatula">
+        <a target="_blank" href="https://github.com/rmatula/kanye-quote">
           <img
-            href="https://github.com/rmatula"
             className="github-icon"
             height="20"
             width="20"
@@ -18,7 +17,11 @@ const Footer = () => {
         </a>
       </div>
       <div className="api-author">
-        <a className="api-author-clickable" href="https://twitter.com/ajzbc">
+        <a
+          target="_blank"
+          className="api-author-clickable"
+          href="https://twitter.com/ajzbc"
+        >
           <img
             className="twitter-icon"
             height="15"
