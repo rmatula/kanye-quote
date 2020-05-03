@@ -1,4 +1,6 @@
 import React from 'react';
+import './Quote.scss';
+import anime from 'animejs';
 
 const Quote = ({ quote }) => {
   return (

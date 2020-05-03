@@ -1,6 +1,7 @@
 import React from 'react';
 import Twitter from '../../assets/twitter.svg';
 import Github from '../../assets/github1.svg';
+import './Footer.scss';
 
 const Footer = () => {
   return (
