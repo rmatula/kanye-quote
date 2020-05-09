@@ -1,11 +1,10 @@
 import React from 'react';
 import './Quote.scss';
-import anime from 'animejs';
 
 const Quote = ({ quote }) => {
   return (
     <div className="quote">
-      <p>{quote}</p>
+      <p className="quote-text">{quote}</p>
     </div>
   );
 };
