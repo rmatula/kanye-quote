@@ -17,6 +17,10 @@
   background-attachment: fixed;
   @include addFlexbox(column);
 
+  @media (max-width: $mobiles) {
+    background-position: left center;
+  }
+
   .outer-container {
     @include addFlexbox(column);
     .main-container {
