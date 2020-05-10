@@ -2,11 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Quote, Button, Footer } from './components';
 import { fetchData } from './api';
 import anime from 'animejs';
-import { useQuote } from './hooks/useQuote';
 import './App.scss';
 const App = () => {
   const [quote, setQuote] = useState('');
-  const [quote2, setQuote2] = useQuote();
+
+  useEffect(() => {
+    const getData = async () => {
+      const { quote } = await fetchData();
+      setQuote(quote);
+    };
+    getData();
+  }, []);
 
   useEffect(() => {
     let tl = anime.timeline({
@@ -41,7 +47,6 @@ const App = () => {
     <div className="container">
       <div className="outer-container">
         <div className="main-container">
-          <Quote quote={quote2} />
           <Quote quote={quote} />
         </div>
         <Button handleSearch={handleSearch} />
@@ -52,19 +57,3 @@ const App = () => {
 };
 
 export default App;
-
-//   async componentDidMount() {
-//     const { quote } = await fetchData();
-//     this.setState({ quote: `"${quote}"` });
-
-//     let tl = anime.timeline({
-//       easing: 'easeOutExpo',
-//       duration: 600,
-//     });
-
-//     tl.add({
-//       targets: '.quote-text',
-//       opacity: 1,
-//       translateY: -40,
-//     });
-//   }
