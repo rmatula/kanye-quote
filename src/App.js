@@ -1,31 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Quote, Button, Footer } from './components';
 import { fetchData } from './api';
 import anime from 'animejs';
 import './App.scss';
+const App = () => {
+  const [quote, setQuote] = useState('');
 
-class App extends React.Component {
-  state = {
-    quote: '',
-  };
-
-  async componentDidMount() {
-    const { quote } = await fetchData();
-    this.setState({ quote: `"${quote}"` });
-
-    let tl = anime.timeline({
-      easing: 'easeOutExpo',
-      duration: 600,
-    });
-
-    tl.add({
-      targets: '.quote-text',
-      opacity: 1,
-      translateY: -40,
-    });
-  }
-
-  componentDidUpdate() {
+  useEffect(() => {
     let tl = anime.timeline({
       easing: 'easeOutExpo',
       duration: 300,
@@ -36,9 +17,9 @@ class App extends React.Component {
       opacity: 1,
       translateY: -40,
     });
-  }
+  }, [quote]);
 
-  handleSearch = async () => {
+  async function handleSearch() {
     let tl = anime.timeline({
       easing: 'easeOutExpo',
       duration: 300,
@@ -51,22 +32,36 @@ class App extends React.Component {
     });
 
     const { quote } = await fetchData();
-    this.setState({ quote: `"${quote}"` });
-  };
-
-  render() {
-    return (
-      <div className="container">
-        <div className="outer-container">
-          <div className="main-container">
-            <Quote quote={this.state.quote} />
-          </div>
-          <Button handleSearch={this.handleSearch} />
-          <Footer />
-        </div>
-      </div>
-    );
+    setQuote(quote || '');
   }
-}
+
+  return (
+    <div className="container">
+      <div className="outer-container">
+        <div className="main-container">
+          <Quote quote={quote} />
+        </div>
+        <Button handleSearch={handleSearch} />
+        <Footer />
+      </div>
+    </div>
+  );
+};
 
 export default App;
+
+//   async componentDidMount() {
+//     const { quote } = await fetchData();
+//     this.setState({ quote: `"${quote}"` });
+
+//     let tl = anime.timeline({
+//       easing: 'easeOutExpo',
+//       duration: 600,
+//     });
+
+//     tl.add({
+//       targets: '.quote-text',
+//       opacity: 1,
+//       translateY: -40,
+//     });
+//   }
