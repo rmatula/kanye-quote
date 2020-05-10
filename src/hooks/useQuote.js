@@ -9,7 +9,7 @@ export const useQuote = () => {
       setState(quote);
     };
     getData();
-  }, [state, setState]);
-  console.log(`-------${state}`);
+  }, []);
+  console.log(`${state}`);
   return state;
 };

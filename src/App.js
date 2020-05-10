@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Quote, Button, Footer } from './components';
 import { fetchData } from './api';
 import anime from 'animejs';
+import { useQuote } from './hooks/useQuote';
 import './App.scss';
 const App = () => {
   const [quote, setQuote] = useState('');
+  const [quote2, setQuote2] = useQuote();
 
   useEffect(() => {
     let tl = anime.timeline({
@@ -39,6 +41,7 @@ const App = () => {
     <div className="container">
       <div className="outer-container">
         <div className="main-container">
+          <Quote quote={quote2} />
           <Quote quote={quote} />
         </div>
         <Button handleSearch={handleSearch} />
